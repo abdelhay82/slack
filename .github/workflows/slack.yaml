@@ -1,7 +1,7 @@
 name: 🔔 Test Slack Notification
 
 on:
-  workflow_dispatch: # permet de lancer manuellement depuis GitHub Actions UI
+  workflow_dispatch: # permet de lancer manuellement
 
 jobs:
   send-slack:
@@ -12,7 +12,8 @@ jobs:
         with:
           payload: |
             {
-              "text": "🚀 *Test Slack réussi !* 🎉\nCe message vient de GitHub Actions ✅"
+              "text": "🚀 @here Pipeline CI/CD réussi sur main ! 🎉\nCe message vient de GitHub Actions ✅"
             }
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }}
+
